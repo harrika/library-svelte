@@ -1,6 +1,6 @@
 	<div class="navbar row">
 			<div class="column column-30">
-				<h3>OdinLibrary</h3>				
+				<h3>The Odin Library</h3>				
 			</div>
 			<div class="column column-70">
 				<ul>

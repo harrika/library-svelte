@@ -1,11 +1,14 @@
 
 
 <script>
+	import {createEventDispatcher} from 'svelte';
+	const dispatch = createEventDispatcher();
+
 	export let author;
 	export let title;
 	export let pages;
 	export let read;
-	const delbook = () => sendelbook;
+	const delbook =()=>dispatch("removebook", title);
 	const togstat = () => sendtogstat;
 </script>
 
