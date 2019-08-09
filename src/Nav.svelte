@@ -2,12 +2,12 @@
 			<div class="column column-30">
 				<h3>The Odin Library</h3>				
 			</div>
-			<div class="column column-70">
+			<!-- <div class="column column-70">
 				<ul>
 					<li><a class="active" href="#lib">Library</a></li>
 					<li><a href="#about">About</a></li>
 				</ul>				
-			</div>
+			</div> -->
 	</div> <!-- navbar stop -->
 
 
