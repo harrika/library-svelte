@@ -68,38 +68,52 @@
 			books = books.filter(bk => bk.title !== e.detail);
 		}
 	};
+	const changeRead = e => {
+		const i = books.findIndex(buk => buk.title === e.detail);
+		books[i].read = !books[i].read; 
+	};
 </script>
 
-<style></style>
+<style>
+	img {
+		width: 100%;
+		height: 70%;
+	}
+</style>
 
 <Navbar />
 <div class="container">
-	<div class="row">
-		<div class="column column-40 column-offset-50">
+	<div class="row bm">
+		<div class="column column-60">
+			<img src="lib.jpg" alt="libary">			
+		</div>
+		<div class="column column-40">
 			<AddBook on:addbook="{addBuk}" />
 		</div>
 	</div>
 	<div class="row">
 		<div class="column">
-			{#each books as book} {#if (book.title.length)%2 == 0 }
+			{#each books as book} {#if (book.author.length)%2 == 0 }
 			<Book
 				title="{book.title}"
 				pages="{book.pages}"
 				author="{book.author}"
 				read="{book.read}"
 				on:removebook="{removeBook}"
+				on:changeread="{changeRead}"
 			/>
 			{/if} {/each}
 		</div>
 		<!-- end column a -->
 		<div class="column">
-			{#each books as book} {#if (book.title.length)%2 == 1 }
+			{#each books as book} {#if (book.author.length)%2 == 1 }
 			<Book
 				title="{book.title}"
 				pages="{book.pages}"
 				author="{book.author}"
 				read="{book.read}"
 				on:removebook="{removeBook}"
+				on:changeread="{changeRead}"
 			/>
 			{/if} {/each}
 		</div>

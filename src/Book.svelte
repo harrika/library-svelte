@@ -9,7 +9,7 @@
 	export let pages;
 	export let read;
 	const delbook =()=>dispatch("removebook", title);
-	const togstat = () => sendtogstat;
+	const togstat =()=>dispatch("changeread", title);
 </script>
 
 <style>	
