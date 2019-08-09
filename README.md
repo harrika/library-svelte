@@ -1,5 +1,4 @@
-#ODIN JACASCRIPT:PROJECT Frameworks
+# An ODIN Project - JAVASCRIPT:Frameworks
 
-An implementation of hte odin library project 
-
-using the Svelte js framework
+An implementation of the **Odin library project**
+from the Javascript curriculum using the Svelte js framework
