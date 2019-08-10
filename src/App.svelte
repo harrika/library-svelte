@@ -79,21 +79,30 @@
 		width: 100%;
 		height: 70%;
 	}
+	.read {
+	    text-decoration: line-through;
+	    color: grey;
+	}
+	.bm {
+		background-color: #ece8e8;
+		padding-top: 35px;
+		margin-top: 0px;
+	}
 </style>
 
 <Navbar />
 <div class="container">
 	<div class="row bm">
-		<div class="column column-60">
+		<div class="column column-40 column-offset-10">
 			<img src="lib.jpg" alt="libary">			
 		</div>
-		<div class="column column-40">
+		<div class="column column-40 column-offset-10">
 			<AddBook on:addbook="{addBuk}" />
 		</div>
 	</div>
 	<div class="row">
 		<div class="column">
-			{#each books as book} {#if (book.author.length)%2 == 0 }
+			{#each books as book, i} {#if i%2 == 0 }
 			<Book
 				title="{book.title}"
 				pages="{book.pages}"
@@ -103,10 +112,9 @@
 				on:changeread="{changeRead}"
 			/>
 			{/if} {/each}
-		</div>
-		<!-- end column a -->
+		</div>		<!-- end column a -->
 		<div class="column">
-			{#each books as book} {#if (book.author.length)%2 == 1 }
+			{#each books as book, i} {#if i%2 == 1 }
 			<Book
 				title="{book.title}"
 				pages="{book.pages}"
@@ -116,9 +124,6 @@
 				on:changeread="{changeRead}"
 			/>
 			{/if} {/each}
-		</div>
-		<!-- end column b -->
-	</div>
-	<!-- end row -->
-</div>
-<!-- ending container -->
+		</div>		<!-- end column b -->
+	</div>	<!-- end row -->
+</div><!-- ending container -->

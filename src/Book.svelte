@@ -21,6 +21,14 @@
 	  margin: 10px 5px;
 	  color: #204f6e;
 	}
+	.read {
+	  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	  transition: 0.3s;
+	  /*width: 70%;*/
+	  padding: 25px;
+	  margin: 10px 5px;
+	  background-color: #bddcdc;
+	}
 	.card:hover {
 	  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 	}
@@ -31,13 +39,16 @@
 	  padding: 0 1.5rem;
 	  margin-top: 5px;
 	}
+	
+
 </style>
 
 	  <div class="column">
-	  	<div class="card">
+	  	<div class="{read==true ? 'read': 'card'}">
+	  		<!-- <div class="card"> -->
 	  		<strong>{title}</strong> <br>
 	  		<strong>{pages} pages</strong>	
-	  		by {author} 
+	  		{author} 
 	  		<button class="button button-clear button-small" on:click={togstat}>
 	  		{#if read }	read{:else}	not read{/if}
 	  		</button>
@@ -45,5 +56,10 @@
 	  	</div>	  	
 	  </div>
 
-	 
+<!-- 
+	  <button
+	  	class="{current === 'foo' ? 'active' : ''}"
+	  	on:click="{() => current = 'foo'}">foo
+	  </button>
 
+ -->

@@ -15,7 +15,8 @@
 	.navbar {
 	  margin-bottom: 20px;
 	  background-color: #4c6390;
-	  /*padding: 20px 10px;*/
+	 
+	  /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);*/
 	}
 	.navbar h3 {
 		color: #e0c3b7;
@@ -39,6 +40,11 @@
 	}
 	.navbar li a:hover {
 	    background-color: #6d7ea0;
+	}
+	.row {
+		margin-bottom: 1px;
+		border-bottom: 2px solid #606c76;
+		/*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.8);*/
 	}
 	
 </style>
