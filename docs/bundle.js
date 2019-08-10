@@ -324,11 +324,11 @@ var app = (function () {
     			div0 = element("div");
     			h3 = element("h3");
     			h3.textContent = "The Odin Library";
-    			attr(h3, "class", "svelte-ihljs6");
+    			attr(h3, "class", "svelte-171dvxz");
     			add_location(h3, file, 2, 4, 66);
     			attr(div0, "class", "column column-30");
     			add_location(div0, file, 1, 3, 30);
-    			attr(div1, "class", "navbar row svelte-ihljs6");
+    			attr(div1, "class", "navbar row svelte-171dvxz");
     			add_location(div1, file, 0, 1, 1);
     		},
 
@@ -365,7 +365,7 @@ var app = (function () {
 
     const file$1 = "src\\Book.svelte";
 
-    // (42:21) {:else}
+    // (53:21) {:else}
     function create_else_block(ctx) {
     	var t;
 
@@ -386,7 +386,7 @@ var app = (function () {
     	};
     }
 
-    // (42:5) {#if read }
+    // (53:5) {#if read }
     function create_if_block(ctx) {
     	var t;
 
@@ -408,7 +408,7 @@ var app = (function () {
     }
 
     function create_fragment$1(ctx) {
-    	var div1, div0, strong0, t0, t1, br, t2, strong1, t3, t4, t5, t6, t7, button0, t8, button1, dispose;
+    	var div1, div0, strong0, t0, t1, br, t2, strong1, t3, t4, t5, t6, t7, button0, t8, button1, div0_class_value, dispose;
 
     	function select_block_type(ctx) {
     		if (ctx.read) return create_if_block;
@@ -430,7 +430,7 @@ var app = (function () {
     			strong1 = element("strong");
     			t3 = text(ctx.pages);
     			t4 = text(" pages");
-    			t5 = text("\t\r\n\t  \t\tby ");
+    			t5 = space();
     			t6 = text(ctx.author);
     			t7 = space();
     			button0 = element("button");
@@ -438,17 +438,17 @@ var app = (function () {
     			t8 = space();
     			button1 = element("button");
     			button1.textContent = "del";
-    			add_location(strong0, file$1, 37, 5, 746);
-    			add_location(br, file$1, 37, 30, 771);
-    			add_location(strong1, file$1, 38, 5, 782);
-    			attr(button0, "class", "button button-clear button-small svelte-c142sk");
-    			add_location(button0, file$1, 40, 5, 839);
-    			attr(button1, "class", "button button-outline button-small svelte-c142sk");
-    			add_location(button1, file$1, 43, 5, 974);
-    			attr(div0, "class", "card svelte-c142sk");
-    			add_location(div0, file$1, 36, 4, 721);
+    			add_location(strong0, file$1, 48, 5, 983);
+    			add_location(br, file$1, 48, 30, 1008);
+    			add_location(strong1, file$1, 49, 5, 1019);
+    			attr(button0, "class", "button button-clear button-small svelte-1uk6quo");
+    			add_location(button0, file$1, 51, 5, 1073);
+    			attr(button1, "class", "button button-outline button-small svelte-1uk6quo");
+    			add_location(button1, file$1, 54, 5, 1208);
+    			attr(div0, "class", div0_class_value = "" + (ctx.read==true ? 'read': 'card') + " svelte-1uk6quo");
+    			add_location(div0, file$1, 46, 4, 899);
     			attr(div1, "class", "column");
-    			add_location(div1, file$1, 35, 3, 695);
+    			add_location(div1, file$1, 45, 3, 873);
 
     			dispose = [
     				listen(button0, "click", ctx.togstat),
@@ -500,6 +500,10 @@ var app = (function () {
     					if_block.c();
     					if_block.m(button0, null);
     				}
+    			}
+
+    			if ((changed.read) && div0_class_value !== (div0_class_value = "" + (ctx.read==true ? 'read': 'card') + " svelte-1uk6quo")) {
+    				attr(div0, "class", div0_class_value);
     			}
     		},
 
@@ -755,16 +759,18 @@ var app = (function () {
     function get_each_context(ctx, list, i) {
     	const child_ctx = Object.create(ctx);
     	child_ctx.book = list[i];
+    	child_ctx.i = i;
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = Object.create(ctx);
     	child_ctx.book = list[i];
+    	child_ctx.i = i;
     	return child_ctx;
     }
 
-    // (96:25) {#if (book.author.length)%2 == 0 }
+    // (105:28) {#if i%2 == 0 }
     function create_if_block_1(ctx) {
     	var current;
 
@@ -817,11 +823,11 @@ var app = (function () {
     	};
     }
 
-    // (96:3) {#each books as book}
+    // (105:3) {#each books as book, i}
     function create_each_block_1(ctx) {
     	var if_block_anchor, current;
 
-    	var if_block = ((ctx.book.author.length)%2 == 0) && create_if_block_1(ctx);
+    	var if_block = (ctx.i%2 == 0) && create_if_block_1(ctx);
 
     	return {
     		c: function create() {
@@ -836,7 +842,7 @@ var app = (function () {
     		},
 
     		p: function update(changed, ctx) {
-    			if ((ctx.book.author.length)%2 == 0) {
+    			if (ctx.i%2 == 0) {
     				if (if_block) {
     					if_block.p(changed, ctx);
     					transition_in(if_block, 1);
@@ -876,7 +882,7 @@ var app = (function () {
     	};
     }
 
-    // (109:25) {#if (book.author.length)%2 == 1 }
+    // (117:28) {#if i%2 == 1 }
     function create_if_block$1(ctx) {
     	var current;
 
@@ -929,11 +935,11 @@ var app = (function () {
     	};
     }
 
-    // (109:3) {#each books as book}
+    // (117:3) {#each books as book, i}
     function create_each_block(ctx) {
     	var if_block_anchor, current;
 
-    	var if_block = ((ctx.book.author.length)%2 == 1) && create_if_block$1(ctx);
+    	var if_block = (ctx.i%2 == 1) && create_if_block$1(ctx);
 
     	return {
     		c: function create() {
@@ -948,7 +954,7 @@ var app = (function () {
     		},
 
     		p: function update(changed, ctx) {
-    			if ((ctx.book.author.length)%2 == 1) {
+    			if (ctx.i%2 == 1) {
     				if (if_block) {
     					if_block.p(changed, ctx);
     					transition_in(if_block, 1);
@@ -1047,22 +1053,22 @@ var app = (function () {
     			}
     			attr(img, "src", "lib.jpg");
     			attr(img, "alt", "libary");
-    			attr(img, "class", "svelte-1okx6ep");
-    			add_location(img, file$3, 87, 3, 1539);
-    			attr(div0, "class", "column column-60");
-    			add_location(div0, file$3, 86, 2, 1505);
-    			attr(div1, "class", "column column-40");
-    			add_location(div1, file$3, 89, 2, 1586);
-    			attr(div2, "class", "row bm");
-    			add_location(div2, file$3, 85, 1, 1482);
+    			attr(img, "class", "svelte-1mn7exp");
+    			add_location(img, file$3, 96, 3, 1701);
+    			attr(div0, "class", "column column-40 column-offset-10");
+    			add_location(div0, file$3, 95, 2, 1650);
+    			attr(div1, "class", "column column-40 column-offset-10");
+    			add_location(div1, file$3, 98, 2, 1748);
+    			attr(div2, "class", "row bm svelte-1mn7exp");
+    			add_location(div2, file$3, 94, 1, 1627);
     			attr(div3, "class", "column");
-    			add_location(div3, file$3, 94, 2, 1692);
+    			add_location(div3, file$3, 103, 2, 1871);
     			attr(div4, "class", "column");
-    			add_location(div4, file$3, 107, 2, 2006);
+    			add_location(div4, file$3, 115, 2, 2168);
     			attr(div5, "class", "row");
-    			add_location(div5, file$3, 93, 1, 1672);
+    			add_location(div5, file$3, 102, 1, 1851);
     			attr(div6, "class", "container");
-    			add_location(div6, file$3, 84, 0, 1457);
+    			add_location(div6, file$3, 93, 0, 1602);
     		},
 
     		l: function claim(nodes) {
